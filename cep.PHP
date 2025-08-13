@@ -6,8 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    CEP:
     <input name="cep" id="cep" type="text" />
-    <button onclick=" Consultar CEP() a">Consultar Cep</button>
+    <button onclick="ConsultarCEP()">Consultar Cep</button>
     <br/>
     Endereço: <input type="text" id="endereco" />
     <br/>
@@ -16,14 +17,14 @@
     Estado: <input type="text" id="estado" />
     <script>
  
-    function Consultar CEP()
-    {´
+    function ConsultarCEP()
+    {
         var cep = document.getElementById("cep")
         let url = "https://viacep.com.br/ws/"+cep.value+"/json/"
         fetch(url)
         .then (resp => resp.json())
         .then(dados => {
-                alert(dados)
+                alert(dados.logradouro)
 
         })
     }
